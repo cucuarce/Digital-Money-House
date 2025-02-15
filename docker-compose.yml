@@ -1,0 +1,113 @@
+version: '3.8'
+
+services:
+  mysql-db:
+    image: mysql:8.0
+    container_name: mysql-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD:
+      MYSQL_USER:
+      MYSQL_PASSWORD:
+    ports:
+      - "3306:3306"
+    networks:
+      - microservices-network
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  zipkin:
+    image: openzipkin/zipkin:latest
+    container_name: zipkin
+    restart: always
+    ports:
+      - "9411:9411"
+    networks:
+      - microservices-network
+
+  eureka-server:
+    container_name: eureka-server
+    build: eureka-server/
+    ports:
+      - "8761:8761"
+    networks:
+      - microservices-network
+
+  config-server:
+    build: config-server/
+    depends_on:
+      - eureka-server
+    ports:
+      - "8888:8888"
+    networks:
+      - microservices-network
+    volumes:
+      - ~/.ssh:/root/.ssh
+
+  api-gateway:
+    build: api-gateway/
+    depends_on:
+      - eureka-server
+      - config-server
+    ports:
+      - "8081:8081"
+    networks:
+      - microservices-network
+    restart: always
+
+  security-service:
+    build: security-service/
+    depends_on:
+      - mysql-db
+      - config-server
+      - api-gateway
+    ports:
+      - "8082:8080"
+    networks:
+      - microservices-network
+    restart: always
+
+  accounts-service:
+    build: accounts-service/
+    depends_on:
+      - mysql-db
+      - config-server
+      - api-gateway
+      - security-service
+    ports:
+      - "8083:8080"
+    networks:
+      - microservices-network
+    restart: always
+
+  cards-service:
+    build: cards-service/
+    depends_on:
+      - mysql-db
+      - config-server
+      - api-gateway
+      - security-service
+    ports:
+      - "8085:8080"
+    networks:
+      - microservices-network
+    restart: always
+
+  transactions-service:
+    build: transactions-service
+    depends_on:
+      - mysql-db
+      - config-server
+      - api-gateway
+      - security-service
+    ports:
+      - "8084:8080"
+    networks:
+      - microservices-network
+    restart: always
+
+networks:
+  microservices-network:
+
+volumes:
+  mysql_data:
