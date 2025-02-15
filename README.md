@@ -1,4 +1,4 @@
-#🏦 Digital Money House – Plataforma de Billetera Virtual#
+# 🏦 Digital Money House – Plataforma de Billetera Virtual
 
 Digital Money House es una plataforma de billetera virtual desarrollada bajo una 
 arquitectura de **microservicios**, diseñada para ofrecer una gestión segura y escalable de cuentas, 
@@ -6,7 +6,7 @@ transacciones y autenticación de usuarios.
 
 ****************************************************************************************************
 
-##📌 **Características**
+## 📌 **Características**
 
 ✅ Arquitectura de Microservicios con **Spring Boot** y **Spring Cloud**  
 ✅ Autenticación y Autorización con **JWT**  
@@ -19,7 +19,7 @@ transacciones y autenticación de usuarios.
 
 ****************************************************************************************************
 
-##🛠 Tecnologías Utilizadas
+## 🛠 Tecnologías Utilizadas
 
 - **Backend:** Java 17, Spring Boot 3, Spring Cloud
 - **Seguridad:** JWT, Spring Security
@@ -33,7 +33,7 @@ transacciones y autenticación de usuarios.
 
 ****************************************************************************************************
 
-##🚀 Instalación y Configuración
+## 🚀 Instalación y Configuración
 
 1️⃣ **Prerrequisitos**
 Antes de iniciar el proyecto, asegúrate de tener instalados:
@@ -73,56 +73,64 @@ Ejemplo con security-service:
 
 ****************************************************************************************************
 
-##🏗 Microservicios Disponibles
+## 🏗 Microservicios Disponibles
 
 Cada microservicio expone endpoints REST, que pueden ser accedidos a través del API Gateway.
 
 📌 **1. API Gateway**
 
-URL Base: http://localhost:8081
-Ejemplo de endpoint: http://localhost:8081/users/auth/login
+- URL Base: http://localhost:8081
+- Ejemplo de endpoint: http://localhost:8081/users/auth/login
 
 📌 **2. Security Service**
 
-URL Base: http://localhost:8082
+- URL Base: http://localhost:8082
+
 Endpoints:
-POST /users/auth/register → Registrar usuario
-POST /users/auth/login → Iniciar sesión
-POST /users/auth/verify-email → Verificar usuario
+
+- POST /users/auth/register → Registrar usuario
+- POST /users/auth/login → Iniciar sesión
+- POST /users/auth/verify-email → Verificar usuario
 
 📌 **3. Accounts Service**
 
-URL Base: http://localhost:8083
+- URL Base: http://localhost:8083
+
 Endpoints:
-GET /accounts/api/{id} → Obtener cuenta por ID
-POST /accounts/api → Crear nueva cuenta
+
+- GET /accounts/api/{id} → Obtener cuenta por ID
+- POST /accounts/api → Crear nueva cuenta
 
 📌 **4. Transactions Service**
 
-URL Base: http://localhost:8084
+- URL Base: http://localhost:8084
+
 Endpoints:
-GET /transactions/api/{id} → Obtener transacción por ID
-POST /transactions/api → Crear transacción
+
+- GET /transactions/api/{id} → Obtener transacción por ID
+- POST /transactions/api → Crear transacción
 
 📌 **5. Cards Service**
 
-URL Base: http://localhost:8085
+- URL Base: http://localhost:8085
+
 Endpoints:
-GET /cards/api/{id} → Obtener tarjeta por ID
-POST /cards/api → Crear tarjeta
+
+- GET /cards/api/{id} → Obtener tarjeta por ID
+- POST /cards/api → Crear tarjeta
 
 ****************************************************************************************************
 
-##📚 Documentación
+## 📚 Documentación
 
-  📄 http://localhost:8081/security-service/swagger-ui.html
-  📄 http://localhost:8081/accounts-service/swagger-ui.html
-  📄 http://localhost:8081/cards-service/swagger-ui.html
-  📄 http://localhost:8081/transactions-service/swagger-ui.html
+  - 📄 http://localhost:8081/security-service/swagger-ui.html
+  - 📄 http://localhost:8081/accounts-service/swagger-ui.html
+  - 📄 http://localhost:8081/cards-service/swagger-ui.html
+  - 📄 http://localhost:8081/transactions-service/swagger-ui.html
 
 ****************************************************************************************************
 
-##📊 Monitoreo y Logs
+## 📊 Monitoreo y Logs
 
 Puedes monitorear la actividad del sistema usando:
 
@@ -136,7 +144,7 @@ Para ver los logs en tiempo real:
 
 ****************************************************************************************************
 
-##🔧 Posibilidad de mejoras
+## 🔧 Posibilidad de mejoras
 
 - Implementar RabbitMQ para peticiones asincrónicas
 - Implementar circuit breaker
@@ -145,13 +153,13 @@ Para ver los logs en tiempo real:
 
 ****************************************************************************************************
 
-##📜 Licencia
+## 📜 Licencia
 
 Este proyecto está bajo la licencia MIT.
 
 ****************************************************************************************************
 
-##👨‍💻 Equipo
+## 👨‍💻 Equipo
 
 Desarrollado con mucho amor y esfuerzo por el desarrollador Alberto Arce 🚀
 
