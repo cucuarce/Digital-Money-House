@@ -41,7 +41,7 @@ Antes de iniciar el proyecto, asegúrate de tener instalados:
 
 2️⃣ **Clonar el Repositorio**
 
-1. git clone git@github.com:dhm-group/digital-money-house.git
+1. git clone git@github.com:dhm-group/Digital-Money-House.git
 2. cd digital-money-house
 
 3️⃣ **Configuraciones**
